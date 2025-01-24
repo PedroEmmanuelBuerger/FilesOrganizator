@@ -1,13 +1,12 @@
 import os
 import shutil
 import time
+from lists.destinations import listdestino, destinotxt, destinoimg, destinoexcel
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 filelocations = r"C:\Users\pedro.silva\Downloads"
-destinotxt = r"C:\Users\pedro.silva\Downloads\txt"
-destinopng = r"C:\Users\pedro.silva\Downloads\png"
-listdestino = [destinotxt, destinopng]
+
 
 for destino in listdestino:
     if not os.path.exists(destino):
@@ -20,10 +19,16 @@ def mover_arquivo(file, ext, path_complete):
             print(f"Arquivo {file} movido para {destinotxt}")
         except Exception as e:
             print(f"Erro ao mover o arquivo {file}: {e}")
-    elif ext == ".png":
+    elif ext == ".png" or ext == ".jpg":
         try:
-            shutil.move(path_complete, destinopng)
-            print(f"Arquivo {file} movido para {destinopng}")
+            shutil.move(path_complete, destinoimg)
+            print(f"Arquivo {file} movido para {destinoimg}")
+        except Exception as e:
+            print(f"Erro ao mover o arquivo {file}: {e}")
+    elif ext == ".xlsx" or ext == ".xls" or ext == ".csv":
+        try:
+            shutil.move(path_complete, destinoexcel)
+            print(f"Arquivo {file} movido para {destinoexcel}")
         except Exception as e:
             print(f"Erro ao mover o arquivo {file}: {e}")
 
@@ -41,7 +46,7 @@ class FileHandler(FileSystemEventHandler):
         if not event.is_directory:
             file = os.path.basename(event.src_path)
             ext = os.path.splitext(file)[1]
-            if ext in [".txt", ".png"]:
+            if ext in [".txt", ".png", ".jpg", ".xlsx", ".xls", ".csv"]:
                 if arquivo_completo(event.src_path):
                     mover_arquivo(file, ext, event.src_path)
 
