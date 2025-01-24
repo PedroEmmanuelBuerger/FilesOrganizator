@@ -1,7 +1,7 @@
 import os
 import shutil
 import time
-from lists.destinations import listdestino, destinotxt, destinoimg, destinoexcel
+from lists.destinations import listdestino, destinotxt, destinoimg, destinoexcel, excelgroup, txtgroup, imggroup, allgroups
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -13,19 +13,19 @@ for destino in listdestino:
         os.makedirs(destino)
 
 def mover_arquivo(file, ext, path_complete):
-    if ext == ".txt":
+    if ext in txtgroup:
         try:
             shutil.move(path_complete, destinotxt)
             print(f"Arquivo {file} movido para {destinotxt}")
         except Exception as e:
             print(f"Erro ao mover o arquivo {file}: {e}")
-    elif ext == ".png" or ext == ".jpg":
+    elif ext in imggroup:
         try:
             shutil.move(path_complete, destinoimg)
             print(f"Arquivo {file} movido para {destinoimg}")
         except Exception as e:
             print(f"Erro ao mover o arquivo {file}: {e}")
-    elif ext == ".xlsx" or ext == ".xls" or ext == ".csv":
+    elif ext in excelgroup:
         try:
             shutil.move(path_complete, destinoexcel)
             print(f"Arquivo {file} movido para {destinoexcel}")
@@ -46,7 +46,7 @@ class FileHandler(FileSystemEventHandler):
         if not event.is_directory:
             file = os.path.basename(event.src_path)
             ext = os.path.splitext(file)[1]
-            if ext in [".txt", ".png", ".jpg", ".xlsx", ".xls", ".csv"]:
+            if ext in allgroups:
                 if arquivo_completo(event.src_path):
                     mover_arquivo(file, ext, event.src_path)
 
