@@ -1,6 +1,6 @@
 import shutil
-from lists.destinations import destinotxt, destinoimg, destinoexcel
-from lists.groups import txtgroup, imggroup, excelgroup
+from lists.destinations import destinotxt, destinoimg, destinoexcel, destinozip
+from lists.groups import txtgroup, imggroup, excelgroup, zipgroup
 
 def mover_arquivo(file, ext, path_complete):
     if ext in txtgroup:
@@ -19,5 +19,11 @@ def mover_arquivo(file, ext, path_complete):
         try:
             shutil.move(path_complete, destinoexcel)
             print(f"Arquivo {file} movido para {destinoexcel}")
+        except Exception as e:
+            print(f"Erro ao mover o arquivo {file}: {e}")
+    elif ext in zipgroup:
+        try:
+            shutil.move(path_complete, destinozip)
+            print(f"Arquivo {file} movido para {destinozip}")
         except Exception as e:
             print(f"Erro ao mover o arquivo {file}: {e}")
