@@ -2,8 +2,7 @@ from functions.MoveArquive import mover_arquivo
 from functions.CompleteArquive import arquivo_completo
 import os
 from lists.groups import allgroups
-
-filelocations = r"C:\Users\pedro.silva\Downloads"
+from lists.destinations import filelocations
 
 def verificar_pasta():
     arquivos_atuais = set(os.listdir(filelocations))

@@ -1,13 +1,11 @@
 import os
 from functions.MoveArquive import mover_arquivo
 from functions.CompleteArquive import arquivo_completo
-from lists.destinations import listdestino
+from lists.destinations import listdestino, filelocations
 from lists.groups import allgroups
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from functions.verifyFiles import verificar_pasta
-
-filelocations = r"C:\Users\pedro.silva\Downloads"
 
 for destino in listdestino:
     if not os.path.exists(destino):
