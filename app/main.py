@@ -5,21 +5,13 @@ from lists.destinations import listdestino
 from lists.groups import allgroups
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
+from functions.verifyFiles import verificar_pasta
 
 filelocations = r"C:\Users\pedro.silva\Downloads"
 
 for destino in listdestino:
     if not os.path.exists(destino):
         os.makedirs(destino)
-
-def verificar_pasta():
-    arquivos_atuais = set(os.listdir(filelocations))
-    for file in arquivos_atuais:
-        caminho_completo = os.path.join(filelocations, file)
-        ext = os.path.splitext(file)[1]
-        if os.path.isfile(caminho_completo) and ext in allgroups:
-            if arquivo_completo(caminho_completo):
-                mover_arquivo(file, ext, caminho_completo)
 
 class FileHandler(FileSystemEventHandler):
     def on_created(self, event):
