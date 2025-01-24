@@ -1,7 +1,8 @@
 import os
-import shutil
-import time
-from lists.destinations import listdestino, destinotxt, destinoimg, destinoexcel, excelgroup, txtgroup, imggroup, allgroups
+from functions.MoveArquive import mover_arquivo
+from functions.CompleteArquive import arquivo_completo
+from lists.destinations import listdestino
+from lists.groups import allgroups
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -11,35 +12,6 @@ filelocations = r"C:\Users\pedro.silva\Downloads"
 for destino in listdestino:
     if not os.path.exists(destino):
         os.makedirs(destino)
-
-def mover_arquivo(file, ext, path_complete):
-    if ext in txtgroup:
-        try:
-            shutil.move(path_complete, destinotxt)
-            print(f"Arquivo {file} movido para {destinotxt}")
-        except Exception as e:
-            print(f"Erro ao mover o arquivo {file}: {e}")
-    elif ext in imggroup:
-        try:
-            shutil.move(path_complete, destinoimg)
-            print(f"Arquivo {file} movido para {destinoimg}")
-        except Exception as e:
-            print(f"Erro ao mover o arquivo {file}: {e}")
-    elif ext in excelgroup:
-        try:
-            shutil.move(path_complete, destinoexcel)
-            print(f"Arquivo {file} movido para {destinoexcel}")
-        except Exception as e:
-            print(f"Erro ao mover o arquivo {file}: {e}")
-
-def arquivo_completo(path):
-    while True:
-        try:
-            with open(path, 'r+'):
-                break
-        except IOError:
-            time.sleep(1)
-    return True
 
 class FileHandler(FileSystemEventHandler):
     def on_created(self, event):
