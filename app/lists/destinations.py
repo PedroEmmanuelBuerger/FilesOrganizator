@@ -1,8 +1,8 @@
-destinotxt = r"C:\Users\pedro.silva\Downloads\txt"
-destinoimg = r"C:\Users\pedro.silva\Downloads\img"
-destinoexcel = r"C:\Users\pedro.silva\Downloads\excel"
-destinozip = r"C:\Users\pedro.silva\Downloads\zip"
-destinopdf = r"C:\Users\pedro.silva\Downloads\pdf"
-filelocations = r"C:\Users\pedro.silva\Downloads"
+destinotxt = "/home/pedro/Downloads/txt"
+destinoimg = "/home/pedro/Downloads/img"
+destinoexcel = "/home/pedro/Downloads/excel"
+destinozip = "/home/pedro/Downloads/zip"
+destinopdf = "/home/pedro/Downloads/pdf"
+filelocations = "/home/pedro/Downloads"
 
 listdestino = [destinotxt, destinoexcel, destinoimg]
