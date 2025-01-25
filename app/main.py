@@ -1,4 +1,5 @@
 import os
+import time
 from functions.MoveArquive import mover_arquivo
 from functions.CompleteArquive import arquivo_completo
 from lists.destinations import listdestino, filelocations
@@ -6,6 +7,7 @@ from lists.groups import allgroups
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from functions.verifyFiles import verificar_pasta
+from functions.VerifyDocuments import verificar_documents
 
 for destino in listdestino:
     if not os.path.exists(destino):
@@ -32,6 +34,8 @@ try:
     print("Monitorando pasta de Downloads... Pressione Ctrl+C para parar.")
     while True:
         verificar_pasta()
+        verificar_documents()
+        time.sleep(1)
 except KeyboardInterrupt:
     observer.stop()
 observer.join()
