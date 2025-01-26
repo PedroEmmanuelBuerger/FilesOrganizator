@@ -1,6 +1,6 @@
 import shutil
 import os
-from lists.destinations import destinotxt, destinoimg, destinoexcel, destinozip, destinopdf,filelocationsdrive, filelocationsvideo, filelocationsscreenshot
+from lists.destinations import destinotxt, destinoimg, destinoexcel, destinozip, destinopdf,filelocationsdrive, filelocationsvideo
 from lists.groups import txtgroup, imggroup, excelgroup, zipgroup, pdfgroup, videogroup
 
 def mover_arquivo(file, ext, path_complete):
