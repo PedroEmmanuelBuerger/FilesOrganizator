@@ -1,6 +1,7 @@
 import shutil
-from lists.destinations import destinotxt, destinoimg, destinoexcel, destinozip, destinopdf
-from lists.groups import txtgroup, imggroup, excelgroup, zipgroup, pdfgroup
+import os
+from lists.destinations import destinotxt, destinoimg, destinoexcel, destinozip, destinopdf,filelocationsdrive, filelocationsvideo, filelocationsscreenshot
+from lists.groups import txtgroup, imggroup, excelgroup, zipgroup, pdfgroup, videogroup
 
 def mover_arquivo(file, ext, path_complete):
     if ext in txtgroup:
@@ -11,8 +12,16 @@ def mover_arquivo(file, ext, path_complete):
             print(f"Erro ao mover o arquivo {file}: {e}")
     elif ext in imggroup:
         try:
-            shutil.move(path_complete, destinoimg)
-            print(f"Arquivo {file} movido para {destinoimg}")
+            if(file.startswith("drive")):
+                existing_files = os.listdir(filelocationsdrive)
+                file_count = len(existing_files)
+                new_name = f"drive_{file_count}{os.path.splitext(file)[1]}"
+                new_path = os.path.join(filelocationsdrive, new_name)
+                shutil.move(path_complete, new_path)
+                print(f"Arquivo {file} movido para {filelocationsdrive}")
+            else:
+                shutil.move(path_complete, destinoimg)
+                print(f"Arquivo {file} movido para {destinoimg}")
         except Exception as e:
             print(f"Erro ao mover o arquivo {file}: {e}")
     elif ext in excelgroup:
@@ -31,5 +40,11 @@ def mover_arquivo(file, ext, path_complete):
         try:
             shutil.move(path_complete, destinopdf)
             print(f"Arquivo {file} movido para {destinopdf}")
+        except Exception as e:
+            print(f"Erro ao mover o arquivo {file}: {e}")
+    elif ext in videogroup:
+        try:
+            shutil.move(path_complete, filelocationsvideo)
+            print(f"Arquivo {file} movido para {filelocationsvideo}")
         except Exception as e:
             print(f"Erro ao mover o arquivo {file}: {e}")

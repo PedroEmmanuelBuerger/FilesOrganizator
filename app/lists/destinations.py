@@ -4,8 +4,10 @@ destinoexcel = "/home/pedro/Downloads/excel"
 destinozip = "/home/pedro/Downloads/zip"
 destinopdf = "/home/pedro/Downloads/pdf"
 filelocations = "/home/pedro/Downloads"
+filelocationsdrive = "/home/pedro/Documents/drive"
+filelocationsvideo = "/home/pedro/Downloads/video"
 
-listdestino = [destinotxt, destinoexcel, destinoimg, destinozip, destinopdf]
+listdestino = [destinotxt, destinoexcel, destinoimg, destinozip, destinopdf, filelocationsdrive, filelocationsvideo]
 
 
 documenttxt = "/home/pedro/Documents/txt"
@@ -16,4 +18,4 @@ documentpdf = "/home/pedro/Documents/pdf"
 documentvideo = "/home/pedro/Videos"
 destino_fallback = "/home/pedro/Documents"
 
-listsecondsdestino = [documenttxt, documentimg, documentexcel, documentzip, documentpdf]
+listsecondsdestino = [documenttxt, documentimg, documentexcel, documentzip, documentpdf, documentvideo, destino_fallback]

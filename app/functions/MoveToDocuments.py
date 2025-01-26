@@ -1,8 +1,8 @@
 import os
 from lists.destinations import destino_fallback
 import shutil
-from lists.groups import txtgroup, imggroup, excelgroup, zipgroup, pdfgroup
-from lists.destinations import documenttxt, documentimg, documentexcel, documentzip, documentpdf
+from lists.groups import txtgroup, imggroup, excelgroup, zipgroup, pdfgroup, videogroup
+from lists.destinations import documenttxt, documentimg, documentexcel, documentzip, documentpdf, documentvideo
 
 def mover_para_documents(caminho_completo):
     try:
@@ -23,6 +23,9 @@ def mover_para_documents(caminho_completo):
         elif ext in pdfgroup:
             shutil.move(caminho_completo, documentpdf)
             print(f"Arquivo {file} movido para {documentpdf}")
+        elif ext in videogroup:
+            shutil.move(caminho_completo, documentvideo)
+            print(f"Arquivo {file} movido para {documentvideo}")
         else:
             shutil.move(caminho_completo, destino_fallback)
             print(f"Arquivo {file} movido para {destino_fallback}")
