@@ -8,7 +8,6 @@ def mover_para_documents(caminho_completo):
     try:
         file = os.path.basename(caminho_completo)
         ext = os.path.splitext(file)[1]
-
         if ext in txtgroup:
             shutil.move(caminho_completo, documenttxt)
             print(f"Arquivo {file} movido para {documenttxt}")

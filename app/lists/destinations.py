@@ -9,10 +9,11 @@ listdestino = [destinotxt, destinoexcel, destinoimg, destinozip, destinopdf]
 
 
 documenttxt = "/home/pedro/Documents/txt"
-documentimg = "/home/pedro/Documents/img"
+documentimg = "/home/pedro/Pictures"
 documentexcel = "/home/pedro/Documents/excel"
 documentzip = "/home/pedro/Documents/zip"
 documentpdf = "/home/pedro/Documents/pdf"
+documentvideo = "/home/pedro/Videos"
 destino_fallback = "/home/pedro/Documents"
 
 listsecondsdestino = [documenttxt, documentimg, documentexcel, documentzip, documentpdf]
