@@ -1,38 +1,38 @@
 # FilesOrganizator
 
-FilesOrganizator é um projeto desenvolvido para organizar arquivos de forma automatizada em um ambiente Linux(possui versão windows tambem), ajudando a manter pastas e diretórios bem estruturados.
+FilesOrganizator is a project developed to automate file organization in a Linux environment (also available for Windows), helping to keep folders and directories well-structured.
 
-## Funcionalidades
+## Features
 
-O projeto inclui as seguintes funcionalidades:
+The project includes the following features:
 
-- Organiza automaticamente arquivos em diretórios com base em sua extensão.
-- Cria pastas específicas para cada tipo de arquivo (como documentos, imagens, vídeos, etc.).
-- Lida com nomes de arquivos duplicados, garantindo que nenhum arquivo seja sobrescrito.
-- Permite personalizar as categorias de organização e os tipos de arquivos associados.
-- Registro de logs para acompanhar quais arquivos foram movidos e para onde.
-- Estrutura flexível e adaptável para novos tipos de arquivos e configurações.
+- Automatically organizes files into directories based on their extensions.
+- Creates specific folders for each file type (such as documents, images, videos, etc.).
+- Handles duplicate file names, ensuring no file is overwritten.
+- Allows customization of organization categories and associated file types.
+- Logs all operations to track which files were moved and their destinations.
+- Flexible and adaptable structure for new file types and configurations.
 
-## Tecnologias
+## Technologies
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
+The project was developed using the following technologies:
 
-- **Python**: Linguagem principal para desenvolvimento do projeto.
-- **os**: Biblioteca para interagir com o sistema de arquivos.
-- **shutil**: Utilizada para mover e copiar arquivos.
-- **logging**: Ferramenta para registrar logs detalhados das operações realizadas.
-- **Watchdog**: Biblioteca para monitorar movimentos na pasta downloads, garantido que o código só rode caso algo mude la.
+- **Python**: Primary programming language for the project.
+- **os**: Library for interacting with the file system.
+- **shutil**: Used for moving and copying files.
+- **logging**: Tool for recording detailed logs of performed operations.
+- **Watchdog**: Library for monitoring changes in the Downloads folder, ensuring the code runs only when changes occur.
 
-## Principais Aprendizados
+## Key Learnings
 
-Os principais aprendizados incluem:
+Key takeaways from this project include:
 
-- Utilizar bibliotecas nativas do Python para manipulação de arquivos e diretórios.
-- Criar um script que seja eficiente e fácil de usar, mesmo para usuários com pouca experiência técnica.
-- Implementar tratamento de erros para lidar com cenários imprevisíveis, como permissões de arquivo.
-- Registrar logs para facilitar o monitoramento e depuração do processo de organização.
-- Aplicar boas práticas de programação em Python, incluindo modularização e reutilização de código.
+- Using Python's native libraries for file and directory manipulation.
+- Creating a script that is efficient and easy to use, even for users with little technical experience.
+- Implementing error handling to manage unpredictable scenarios, such as file permissions.
+- Logging operations to facilitate process monitoring and debugging.
+- Applying Python programming best practices, including modularization and code reuse.
 
-## Conclusão
+## Conclusion
 
-FilesOrganizator é uma ferramenta útil para quem busca automatizar a organização de arquivos em sistemas Linux. O projeto combina conceitos importantes de automação, manipulação de arquivos e registro de logs, oferecendo uma solução eficiente para manter o sistema de arquivos limpo e organizado.
+FilesOrganizator is a valuable tool for anyone looking to automate file organization in Linux systems. The project combines important concepts of automation, file manipulation, and logging, providing an efficient solution for maintaining a clean and organized file system.
