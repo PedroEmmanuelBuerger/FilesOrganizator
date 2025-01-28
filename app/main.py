@@ -28,7 +28,7 @@ observer.schedule(event_handler, filelocations, recursive=False)
 observer.start()
 
 try:
-    print("Monitorando pasta de Downloads... Pressione Ctrl+C para parar.")
+    print("Monitoring the Downloads folder... Press Ctrl+C to stop..")
     observer.join()
 except KeyboardInterrupt:
     observer.stop()
